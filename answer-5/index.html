@@ -3,27 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Export Example</title>
+    <title>Data Export/Import</title>
 </head>
 <body>
-
-    <h2>Data List</h2>
-
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-        </tr>
-
-        <?php include 'list.php'; ?>
-
-    </table>
-
-    <br>
-    <form action="export.php" method="post">
-        <input type="submit" name="export" value="Export to Excel">
+    <h1>Data Export/Import</h1>
+    <form action="export_data.php" method="post">
+        <button type="submit">Export Data to Excel</button>
     </form>
-
+    <br>
+    <a href="import_form.html">Import Data</a>
 </body>
 </html>

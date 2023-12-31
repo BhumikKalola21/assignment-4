@@ -2,21 +2,23 @@
 
 include 'db.php';
 
+// Fetch data from the database
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>{$row['id']}</td>";
-        echo "<td>{$row['name']}</td>";
-        echo "<td>{$row['email']}</td>";
-        echo "</tr>";
-    }
-} else {
-    echo "<tr><td colspan='3'>No data available</td></tr>";
+// Display data in a table
+echo "<h2>User List</h2>";
+echo "<table border='1'>";
+echo "<tr><th>ID</th><th>Name</th><th>Email</th></tr>";
+
+while ($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>{$row['id']}</td>";
+    echo "<td>{$row['name']}</td>";
+    echo "<td>{$row['email']}</td>";
+    echo "</tr>";
 }
 
-$conn->close();
+echo "</table>";
 
-?>
+$conn->close();
